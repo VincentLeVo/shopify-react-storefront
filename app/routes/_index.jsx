@@ -47,34 +47,52 @@ function HeroSection({collection}) {
   if (!collection) return null;
   const image = collection?.image;
   return (
-    <div className="relative bg-gray-900">
-      <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-        <Image
-          data={image}
-          alt={image?.altText}
-          className="h-full w-full object-cover object-center"
-        />
-      </div>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gray-900 opacity-50"
-      />
-
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
-        <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
-          {collection.title}
-        </h1>
-        <p className="mt-4 text-xl text-white">
-          The new arrivals have, well, newly arrived. Check out the latest
-          options from our summer small-batch release while they're still in
-          stock.
-        </p>
-        <a
-          href="#"
-          className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100"
-        >
-          Shop {collection.title} collection
-        </a>
+    <div className="relative bg-emerald-900">
+      <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <div className="hidden sm:mt-32 sm:flex lg:mt-16">
+              <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                Elevate Your Everyday.{' '}
+                <a
+                  href="#"
+                  className="whitespace-nowrap font-semibold text-emerald-200"
+                >
+                  <span className="absolute inset-0" aria-hidden="true" />
+                  Read more <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+            <h1 className="mt-24 text-4xl font-bold tracking-tight text-gray-100 sm:mt-10 sm:text-6xl">
+              Performance Meets Leisure: Gear Up for Life's Every Moment
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-300">
+              Dive into a world where comfort meets agility, and style embraces
+              functionality. At Impact, we understand that your day demands
+              versatility. That's why our collection is meticulously crafted to
+              support you from the morning run to the evening unwind.
+            </p>
+            <div className="mt-10 flex items-center gap-x-6">
+              <Link
+                className="rounded-md bg-emerald-200 px-3.5 py-2.5 text-md font-semibold text-gray-900 shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+                to={`/collections/${collection.handle}`}
+              >
+                Shop Collection
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+          <Image
+            data={image}
+            alt={image?.altText}
+            className="h-full w-full object-cover object-center"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-emerald-900 opacity-20"
+          />
+        </div>
       </div>
     </div>
   );

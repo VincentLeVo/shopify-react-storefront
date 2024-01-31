@@ -334,7 +334,7 @@ function ProductOptions({option, selectedVariant, setSelectedVariant}) {
     pink: 'bg-pink-500',
     orange: 'bg-orange-500',
     gray: 'bg-gray-500',
-    indigo: 'bg-emerald-500',
+    indigo: 'bg-indigo-500',
     teal: 'bg-teal-500',
     olive: 'bg-lime-800', // Custom color
     ocean: 'bg-cyan-700', // Custom color
