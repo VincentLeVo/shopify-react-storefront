@@ -23,9 +23,9 @@ export function Aside({children, heading, id = 'aside'}) {
           window.location.hash = '';
         }}
       />
-      <aside>
+      <aside className="bg-stone-950 text-gray-200">
         <header>
-          <h3 className="text-lg font-medium text-gray-900">{heading}</h3>
+          <h3 className="text-lg font-medium text-gray-100">{heading}</h3>
           <CloseAside />
         </header>
         <main>{children}</main>

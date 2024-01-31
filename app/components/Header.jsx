@@ -17,9 +17,15 @@ import {
 export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
-    <header className="header border-b border-gray-200">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+    <header className="header bg-stone-800 border-b border-stone-500">
+      <NavLink
+        className="text-emerald-500"
+        prefetch="intent"
+        to="/"
+        style={activeLinkStyle}
+        end
+      >
+        <p className="text-lg">{shop.name}</p>
       </NavLink>
       <HeaderMenu
         menu={menu}
@@ -74,7 +80,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             : item.url;
         return (
           <NavLink
-            className="header-menu-item flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+            className="header-menu-item flex items-center px-4 py-2 rounded-md text-md font-medium text-zinc-100 hover:text-emerald-500 hover:bg-zinc-700"
             end
             key={item.id}
             onClick={closeAside}
@@ -109,7 +115,7 @@ function HeaderCtas({isLoggedIn, cart}) {
           <span className="sr-only">Sign In</span>
         )}
         <UserIcon
-          className=" text-gray-400 hover:text-gray-500 lg:ml-4 h-7 w-7"
+          className=" text-gray-200 hover:text-gray-400 lg:ml-4 h-7 w-7"
           aria-hidden="true"
         />
       </NavLink>
@@ -131,7 +137,7 @@ function SearchToggle() {
   return (
     <a
       href="#search-aside"
-      className="p-2 text-gray-400 hover:text-gray-500 lg:block"
+      className="p-2 text-gray-200 hover:text-gray-400 lg:block"
     >
       <span className="sr-only">Search</span>
       <MagnifyingGlassIcon className="h-7 w-7" aria-hidden="true" />
@@ -146,7 +152,7 @@ function CartBadge({count}) {
   return (
     <a className="group flex items-center p-2" href="#cart-aside">
       <ShoppingBagIcon
-        className="h-7 w-7 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+        className="h-7 w-7 flex-shrink-0 text-gray-200 group-hover:text-gray-400"
         aria-hidden="true"
       />
       <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
@@ -224,7 +230,6 @@ const FALLBACK_HEADER_MENU = {
 function activeLinkStyle({isActive, isPending}) {
   return {
     fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
   };
 }
 

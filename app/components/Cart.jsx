@@ -87,7 +87,7 @@ function CartLineItem({layout, line}) {
       )}
 
       <div className="ml-4 flex flex-1 flex-col">
-        <div className="flex justify-between text-base font-medium text-gray-900">
+        <div className="flex justify-between text-base font-medium text-gray-100">
           <Link
             prefetch="intent"
             to={lineItemUrl}
@@ -107,7 +107,7 @@ function CartLineItem({layout, line}) {
         <ul>
           {selectedOptions.map((option) => (
             <li key={option.name}>
-              <small className="mt-1 text-sm text-gray-500">
+              <small className="mt-1 text-sm text-gray-300">
                 {option.name}: {option.value}
               </small>
             </li>
@@ -152,8 +152,11 @@ export function CartSummary({cost, layout, children = null}) {
     layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
 
   return (
-    <div aria-labelledby="cart-summary" className={className}>
-      <dl className="cart-subtotal flex justify-between text-base font-medium text-gray-900">
+    <div
+      aria-labelledby="cart-summary"
+      className={clsx('border-t border-stone-500', className)}
+    >
+      <dl className="cart-subtotal flex justify-between text-base font-medium text-gray-100">
         <dt>Subtotal</dt>
         <dd>
           {cost?.subtotalAmount?.amount ? (
@@ -315,10 +318,12 @@ function CartDiscounts({discountCodes}) {
             type="text"
             name="discountCode"
             placeholder="Discount code"
-            className="block rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6"
+            className="block rounded-md border-0 py-1.5 bg-gray-800 text-gray-100 shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6"
           />
           &nbsp;
-          <button type="submit">Apply</button>
+          <button className="text-gray-400" type="submit">
+            Apply
+          </button>
         </div>
       </UpdateDiscountForm>
     </div>
