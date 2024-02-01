@@ -50,7 +50,7 @@ function HeroSection({collection}) {
     <div className="relative bg-emerald-900">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
         <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
-          <div className="mx-auto max-w-2xl lg:mx-0">
+          <div className="relative z-30 mx-auto max-w-2xl lg:mx-0">
             <div className="hidden sm:mt-32 sm:flex lg:mt-16">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 Elevate Your Everyday.{' '}
@@ -80,6 +80,18 @@ function HeroSection({collection}) {
                 Shop Collection
               </Link>
             </div>
+          </div>
+          <div
+            className="absolute inset-x-0 -top-60 -z-0 transform-gpu overflow-hidden blur-3xl sm:-top-20"
+            aria-hidden="true"
+          >
+            <div
+              className="relative left-[calc(50%-11rem)] aspect-[3/2] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#97ff80] to-[#89fcb1] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+              style={{
+                clipPath:
+                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              }}
+            />
           </div>
         </div>
         <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
