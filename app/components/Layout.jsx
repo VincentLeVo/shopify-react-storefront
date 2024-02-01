@@ -53,7 +53,7 @@ function SearchAside() {
         <br />
         <PredictiveSearchForm>
           {({fetchResults, inputRef}) => (
-            <div>
+            <div className="overflow-hidden bg-transparent">
               <input
                 name="q"
                 onChange={fetchResults}
@@ -61,9 +61,15 @@ function SearchAside() {
                 placeholder="Search"
                 ref={inputRef}
                 type="search"
+                className="rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset  ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6"
               />
               &nbsp;
-              <button type="submit">Search</button>
+              <button
+                className="rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                type="submit"
+              >
+                Search
+              </button>
             </div>
           )}
         </PredictiveSearchForm>

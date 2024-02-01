@@ -127,8 +127,11 @@ function HeaderCtas({isLoggedIn, cart}) {
 
 function HeaderMenuMobileToggle() {
   return (
-    <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      <h3>☰</h3>
+    <a
+      className="header-menu-mobile-toggle text-gray-100 text-lg"
+      href="#mobile-menu-aside"
+    >
+      <h2>☰</h2>
     </a>
   );
 }

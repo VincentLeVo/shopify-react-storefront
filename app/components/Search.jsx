@@ -41,9 +41,11 @@ export function SearchForm({searchTerm}) {
       <input
         defaultValue={searchTerm}
         name="q"
+        className=""
         placeholder="Search…"
         ref={inputRef}
         type="search"
+        className=""
       />
       &nbsp;
       <button type="submit">Search</button>
